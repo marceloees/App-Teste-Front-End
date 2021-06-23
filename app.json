@@ -1,0 +1,12 @@
+{
+  "name": "app-temtudaki",
+  "displayName": "app-temtudaki",
+  "expo": {
+    "name": "app-temtudaki",
+    "slug": "app-temtudaki",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
