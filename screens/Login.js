@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
-import {StyleSheet, View} from 'react-native';
+import {View} from 'react-native';
 import {Button, Input, Text} from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import styles from './styles/styles'
+import botao from './styles/styles'
 
 export default function Login({navigation}){
     const [email, setEmail] = useState(null)
@@ -14,9 +16,13 @@ export default function Login({navigation}){
        })
     }
 
+    const cadastrar = () => {
+      navigation.navigate("Cadastro")
+    }
+
 
     return(
-        <View style = { styles.container } >
+        <View style = {styles.container} >
         <Text h3 > Abra o meu app! </Text>
         <Input placeholder="Email"
         leftIcon ={{ type: 'font-awesome', name: 'envelope'}}
@@ -33,23 +39,26 @@ export default function Login({navigation}){
           icon={
             <Icon
               name="check"
-              size = {15}
               color = "white"></Icon>
           }
           title="Entrar"
           onPress={() => entrar()}></Button>
 
+        <Button
+          icon={
+            <Icon
+              name="user"
+              color = "white"></Icon>
+          }
+          title="Cadastrar"
+          buttonStyle = {botao.button}
+          onPress={() => cadastrar()}></Button>
+
       </View>
     );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
+
 
     
